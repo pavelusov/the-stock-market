@@ -1,0 +1,20 @@
+.root {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 50px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: #cde2ff;
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
