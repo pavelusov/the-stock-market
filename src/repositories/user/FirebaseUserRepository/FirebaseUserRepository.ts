@@ -1,5 +1,5 @@
-import UserRepository from '@/repositories/UserRepository';
-import { User, UserResponse } from '@/repositories/types';
+import UserRepository from '@/repositories/user/UserRepository';
+import { User, UserResponse } from '@/repositories/user/types';
 import { db } from './firebase-init';
 
 class FirebaseUserRepository implements UserRepository {

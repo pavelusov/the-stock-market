@@ -1,6 +1,6 @@
-import firebaseUserRepository from '@/repositories/FirebaseUserRepository';
-import UserRepository from '@/repositories/UserRepository';
-import { User, UserResponse } from '@/repositories/types';
+import firebaseUserRepository from '@/repositories/user/FirebaseUserRepository';
+import UserRepository from '@/repositories/user/UserRepository';
+import { User, UserResponse } from '@/repositories/user/types';
 
 export class UserService {
   private repository: UserRepository = firebaseUserRepository;

@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 import Image from 'next/image';
 import cn from 'classnames';
 
-import { UserResponse } from '@/repositories/types';
+import { UserResponse } from '@/repositories/user/types';
 import s from './navigation.module.css';
 
 type Props = {

@@ -5,7 +5,7 @@ import SignInGithub from '@/components/SignInGithub';
 import { authOptions } from '@/app/utils/auth';
 import userService from '@/services/UserService';
 import s from './login.module.scss';
-import { User } from "@/repositories/types";
+import { User } from '@/repositories/user/types';
 
 const Login = async () => {
   const session = await getServerSession(authOptions);

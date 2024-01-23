@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth';
 import Navigation from '@/components/Navigation';
 import userService from '@/services/UserService';
 import { authOptions } from '@/app/utils/auth';
-import { UserResponse } from '@/repositories/types';
+import { UserResponse } from '@/repositories/user/types';
 import s from './page.module.css';
 
 export default async function Home() {
