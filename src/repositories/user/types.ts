@@ -5,3 +5,8 @@ export type User = {
 }
 
 export type UserResponse = User | null;
+
+export enum DBVendor {
+  Firebase = 'firebase',
+  Test = 'test',
+}
