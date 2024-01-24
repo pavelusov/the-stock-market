@@ -1,0 +1,44 @@
+.root {
+  border: 2px solid gray;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.codeWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.code {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.symbol {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.valueUp {
+  border-color: green;
+
+  .code {
+    color: green;
+  }
+}
+
+.valueDown {
+  border-color: red;
+
+  .code {
+    color: red;
+  }
+}
+
+.valueEqual {
+  border-color: gray;
+}

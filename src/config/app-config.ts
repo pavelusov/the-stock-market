@@ -4,6 +4,7 @@ class AppConfig {
   readonly _GITHUB_CLIENT_ID: string = process.env.GITHUB_CLIENT_ID  || '';
   readonly _GITHUB_CLIENT_SECRET: string = process.env.GITHUB_CLIENT_SECRET  || '';
   readonly _GOOGLE_FIREBASE_ADMIN_SDK: string = process.env.GOOGLE_FIREBASE_ADMIN_SDK  || '';
+  readonly _API_BACKEND: string = process.env.API_BACKEND  || '';
 
   private static instance: AppConfig;
   private constructor() {}
@@ -34,6 +35,10 @@ class AppConfig {
 
   get GOOGLE_FIREBASE_ADMIN_SDK() {
     return JSON.parse(this._GOOGLE_FIREBASE_ADMIN_SDK);
+  }
+
+  get API_BACKEND() {
+    return this._API_BACKEND;
   }
 }
 
