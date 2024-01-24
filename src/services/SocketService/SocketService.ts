@@ -1,19 +1,10 @@
 import io, { Socket } from "socket.io-client";
-import appConfig from "@/config/app-config";
 
 class SocketService {
    socket: null | Socket = null;
 
-   createConnection() {
-    this.socket = io(appConfig.API_BACKEND);
-
-    this.socket.on('connect', () => {
-      console.log('connect')
-    })
-
-     this.socket.on('disconnect', () => {
-       console.log('disconnect')
-     })
+   createConnection(apiBackend: string) {
+    this.socket = io(apiBackend);
   }
 }
 const socketService = new SocketService();

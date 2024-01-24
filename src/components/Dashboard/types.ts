@@ -3,12 +3,15 @@ export type CurrencyType = {
   rate: string
   rate_float: number;
 }
+
+type BPI = {
+  EUR: CurrencyType;
+  GBP: CurrencyType;
+  USD: CurrencyType;
+}
+
 export type CurrencyResponse = {
-  bpi: {
-    EUR: CurrencyType;
-    GBP: CurrencyType;
-    USD: CurrencyType;
-  };
+  bpi: BPI;
   chartName: string;
   time: {
     updated: string;

@@ -8,7 +8,7 @@ import s from './dashboard.module.scss';
 
 export const Dashboard = () => {
   const { state, handle } = useDashboard();
-  const { time, requestTime, previewCurrencies, currencies } = state;
+  const { time, requestTime, previewCurrencies, currencies, isConnected } = state;
   const { startDataHandle, stopDataHandle } = handle;
 
   return (
@@ -16,6 +16,7 @@ export const Dashboard = () => {
       <h2>Bitcoin currency</h2>
       <div className={s.buttons}>
         <button
+          disabled={!isConnected}
           className={cn(s.startButton, s.button)}
           onClick={startDataHandle}>Start loading data</button>
         <button

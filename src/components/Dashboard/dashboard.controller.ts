@@ -4,14 +4,14 @@ import { CurrencyResponse, CurrencyType } from "@/components/Dashboard/types";
 import socketService from "@/services/SocketService/SocketService";
 
 export const useDashboard = () => {
-  useSocket();
+  const { isConnected } = useSocket();
   const [currencies, setCurrencies] = useState<CurrencyType[]>([]);
   const [time, setTime] = useState<string>();
   const [requestTime, setRequestTime] = useState<string>();
 
 
   const startDataHandle = () => {
-    socketService.socket?.emit('server-currency' );
+    socketService.socket?.emit('server-currency');
   }
 
   const stopDataHandle = () => {
@@ -20,17 +20,26 @@ export const useDashboard = () => {
 
   const getCurrencies = (response: CurrencyResponse): CurrencyType[] => {
     if (response?.bpi) {
-      const { bpi } = response;
+      // not work with Object.keys(response.bpi) => response.bpi[key]
+      const USD: CurrencyType =  {
+        code: response.bpi.USD.code,
+        rate: response.bpi.USD.rate,
+        rate_float: response.bpi.USD.rate_float,
+      }
 
-      return Object.keys(bpi).map(code => {
-        const currency: CurrencyType = {
-          code: bpi[code].code,
-          rate: bpi[code].rate,
-          rate_float: bpi[code].rate_float,
-        }
+      const GBP: CurrencyType =  {
+        code: response.bpi.GBP.code,
+        rate: response.bpi.GBP.rate,
+        rate_float: response.bpi.GBP.rate_float,
+      }
 
-        return currency;
-      })
+      const EUR: CurrencyType =  {
+        code: response.bpi.EUR.code,
+        rate: response.bpi.EUR.rate,
+        rate_float: response.bpi.EUR.rate_float,
+      }
+
+      return [USD, EUR, GBP];
     }
     return [];
   }
@@ -69,6 +78,7 @@ export const useDashboard = () => {
   }, [currencies])
 
   const state = {
+    isConnected,
     currencies,
     time,
     requestTime,
